@@ -42,7 +42,7 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
     if (!g)
       {
         perror("/etc/pam.d/pam.acesso/acesso.serial");
-        exit(1);
+        return PAM_AUTH_ERR;
       }
       while (getline(&linha, &serial, g) > 0)
       {
