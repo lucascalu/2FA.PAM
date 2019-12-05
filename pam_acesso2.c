@@ -37,9 +37,9 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 
       FILE *g= fopen("/etc/pam.d/pam.acesso/acesso.serial", "r");
-    size_t serial = 100; 
-    char *linha = malloc(serial);
-    int estado;
+   
+    
+    
     if (!g)
       {
         perror("acesso negado");
@@ -48,29 +48,15 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 		
        
       }
-   
-      if (linha){
-        free(linha);
-      }
+	
+   else
+	   return PAM_SUCCESS;
+	   
+     
       
 
        fclose(g);
 
-      if(estado == 0){
-        system("clear");
-        
-                
-
-          printf("\n\n  -> Acesso Liberado!");
-          printf("\n          -> Logando..\n\n");
-          sleep(2);
-          return PAM_SUCCESS;
-      }else{
-        system("clear");
-          printf("\n\n  -> Acesso bloqueado!");
-          printf("\n          ->  Tente novamente.\n\n");
-          sleep(2);
-          return PAM_AUTH_ERR;
-      }
+     
 }
     
