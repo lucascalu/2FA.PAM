@@ -1,10 +1,10 @@
 ﻿
 
 pam_acesso2.o: pam_acesso2.c
-	gcc -fPIC -lcurl -fno-stack-protector -c pam_acesso2.c
+	gcc -fPIC  -fno-stack-protector -c pam_acesso2.c
 
 install: pam_acesso2.o
-	ld -lcurl -x --shared -o /lib64/security/pam_acesso2.so pam_acesso2.o
+	ld  -x --shared -o /lib64/security/pam_acesso2.so pam_acesso2.o
 	sed -i "4s/^/	auth	  required  pam_acesso2.so\n/" /etc/pam.d/system-auth
 	
 
