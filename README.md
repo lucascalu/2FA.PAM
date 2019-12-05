@@ -67,7 +67,8 @@ Esse projeto é uma das soluções para quem precisa de um modulo de autenticaç
     <li>Controle de acesso 
         
        O Controle de acesso se dá através da exclusão o permanência do arquivo 
-       acesso.serial na pasta etc/pam.d/pam.acesso 
+       acesso.serial na pasta etc/pam.d/pam.acesso (o arquivo pode ser criado através 
+       do comando "nano/etc/pam.d/pam.acesso/acesso.serial")
         
         
         
