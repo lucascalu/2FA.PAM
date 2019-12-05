@@ -17,5 +17,5 @@ uninstall:
 	clear
 	@echo "\n\n -> Módulo de autenticação  removido com sucesso.\n\n"
 
-addpendrive:
+addacesso:
 	./add_acesso3
